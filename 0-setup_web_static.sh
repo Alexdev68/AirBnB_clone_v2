@@ -21,7 +21,7 @@ if [ -L /data/web_static/current ]; then
 	rm /data/web_static/current
 fi
 
-ln -s /data/web_static/releases/test/* /data/web_static/current
+ln -s /data/web_static/releases/test/ /data/web_static/current
 
 sudo chown -R ubuntu:ubuntu /data/
 
