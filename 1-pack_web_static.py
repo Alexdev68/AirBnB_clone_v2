@@ -8,8 +8,7 @@ from fabric.api import task, local
 
 @task
 def do_pack():
-"""This is the function that does the main work.
-"""
+    """This is the function that does the main work."""
     try:
         N_time = datetime.now().strftime("%Y%m%d%H%M%S")
 
@@ -20,4 +19,4 @@ def do_pack():
 
         return "verions/web_static_{}.tgz".format(N_time)
     except Exception as e:
-       return None
+        return None
