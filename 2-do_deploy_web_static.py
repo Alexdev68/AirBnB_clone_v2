@@ -1,23 +1,22 @@
 #!/usr/bin/python3
 """This is a script that distributes an archive to your web servers."""
-from fabric.api import run, put, task, env
-from os.path import exists
+from fabric.api import run, put, env
+from os import path
 
 env.hosts = ['52.91.126.140', '54.160.83.162']
 
 
-@task
 def do_deploy(archive_path):
     """This is the main function that does the distribution."""
-    try:
-        if not exists(archive_path):
-            return False
+    if not path.exists(archive_path):
+        return False
 
+    try:
         put(archive_path, "/tmp/")
 
-        archive_noext = archive_path[:-4]
+        archive_noext = archive_path[9:-4]
         ver = archive_path.split('/')
-        name = ver[2]
+        name = ver[1]
         new_fold = "/data/web_static/releases/{}/".format(archive_noext)
         run("mkdir -p {}".format(new_fold))
         run("tar -xzf /tmp/{} -C {}".format(name, new_fold))
