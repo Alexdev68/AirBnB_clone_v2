@@ -30,6 +30,7 @@ def C_text(text):
             continue
 
         fmt += i
+    return fmt
 
 
 if __name__ == '__main__':
