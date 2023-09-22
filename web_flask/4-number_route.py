@@ -44,9 +44,7 @@ def py_text(text="is cool"):
 @app.route("/number/<n>")
 def num(n):
     """This function returns a number only if it is an integer."""
-    if not isinstance(int(n), int):
-        exit
-    else:
+    if isinstance(int(n), int):
         return f"{n} is a number"
 
 

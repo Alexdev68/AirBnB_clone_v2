@@ -53,9 +53,7 @@ def num(n):
 @app.route("/number_template/<n>")
 def num_temp(n):
     """This function returns an HTML page."""
-    if not isinstance(int(n), int):
-        return ""
-    else:
+    if isinstance(int(n), int):
         return render_template('5-number.html', num=n)
 
 
