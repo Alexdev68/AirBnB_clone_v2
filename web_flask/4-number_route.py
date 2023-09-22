@@ -45,7 +45,7 @@ def py_text(text="is cool"):
 def num(n):
     """This function returns a number only if it is an integer."""
     if not isinstance(int(n), int):
-        return ""
+        exit
     else:
         return f"{n} is a number"
 
