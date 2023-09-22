@@ -41,21 +41,17 @@ def py_text(text="is cool"):
     return fmt
 
 
-@app.route("/number/<n>")
+@app.route("/number/<int:n>")
 def num(n):
     """This function returns a number only if it is an integer."""
-    if not isinstance(int(n), int):
-        return ""
-    else:
-        return f"{n} is a number"
+    return f"{n} is a number"
 
 
-@app.route("/number_template/<n>")
+@app.route("/number_template/<int:n>")
 def num_temp(n):
     """This function returns an HTML page."""
-    if isinstance(int(n), int):
-        text = f"Number: {n}"
-        return render_template('5-number.html', text=text)
+    text = f"Number: {n}"
+    return render_template('5-number.html', text=text)
 
 
 if __name__ == '__main__':
