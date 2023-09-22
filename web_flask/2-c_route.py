@@ -29,7 +29,7 @@ def C_text(text):
             fmt += ' '
             continue
 
-        fmt += i
+        fmt += str(i)
     return fmt
 
 
