@@ -28,6 +28,7 @@ def C_text(text):
 
     return fmt
 
+
 @app.route("/python/")
 @app.route("/python/<text>")
 def py_text(text="is cool"):
