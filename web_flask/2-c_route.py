@@ -18,5 +18,19 @@ def hbnb():
     return "HBNB"
 
 
+@app.route("/c/<text>")
+def C_text(text):
+    """This function returns C with the text and changes all the underscores
+    to spaces.
+    """
+    fmt = ''
+    for i in text:
+        if i == _:
+            fmt += ' '
+            continue
+
+        fmt += i
+
+
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=5000)
