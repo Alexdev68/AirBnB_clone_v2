@@ -54,7 +54,8 @@ def num(n):
 def num_temp(n):
     """This function returns an HTML page."""
     if isinstance(int(n), int):
-        return render_template('5-number.html', num=n)
+        text = f"Number: {n}"
+        return render_template('5-number.html', text=text)
 
 
 if __name__ == '__main__':
