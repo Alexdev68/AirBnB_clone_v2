@@ -23,13 +23,9 @@ def C_text(text):
     """This function returns C with the text and changes all the underscores
     to spaces.
     """
-    fmt = 'C '
-    for i in text:
-        if i == _:
-            fmt += ' '
-            continue
+    space = text.replace("_", " ")
+    fmt = 'C ' + space
 
-        fmt += str(i)
     return fmt
 
 
