@@ -2,12 +2,12 @@
 '''This script an HTML page that lists the states in it's body.'''
 from flask import Flask, render_template
 from models import storage
-from models.state.py import State
+from models.state import State
 
 app = Flask(__name__)
 
 @app.teardown_appcontext
-def teardown():
+def teardown(anything):
     '''removes the current SQLAlchemy Session'''
     storage.close()
 
