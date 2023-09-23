@@ -67,3 +67,7 @@ class FileStorage:
                 self.save()
             except Exception as e:
                 pass
+
+    def close(self):
+        '''Deserializes the JSON file to objects'''
+        self.reload()
