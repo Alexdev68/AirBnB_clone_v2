@@ -4,8 +4,14 @@
 		<TITLE>HBNB</TITLE>
 	</HEAD>
 	<BODY>
-
-		{% if state != "N" %}
+		{% if states is defined %}
+			<H1>States</H1>
+			<UL>
+				{% for state in states.values()|sort(attribute='name') %}
+					<LI>{{ state.id }}: <B>{{ state.name }}</B></LI>
+				{% endfor %}
+			</UL>
+		{% elif state != "N" %}
 			<H1>State: {{ state.name }}</H1>
 			<H3>Cities:</H3>
 			<UL>
@@ -16,6 +22,5 @@
 		{% else %}
 			<H1>Not found!</H1>
 		{% endif %}
-
 	</BODY>
 </HTML>
