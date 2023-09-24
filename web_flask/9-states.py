@@ -14,16 +14,13 @@ def teardown(anything):
 
 
 @app.route("/states", strict_slashes=False)
-def state():
-    '''lists states'''
-    ob = storage.all(State)
-    return render_template('7-states_list.html', states=ob)
-
-
 @app.route("/states/<id>", strict_slashes=False)
-def states_id(id):
+def states_id(id=None):
     '''lists cities in states based on id'''
     ob = storage.all(State)
+
+    if id is None:
+        return render_template('9-states.html', states=ob)
 
     for st in ob.values():
         if st.id == id:
